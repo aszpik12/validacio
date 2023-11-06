@@ -1,7 +1,7 @@
 class TextUrlapElem {
   #key;
   #elemLeiro = {};
-  #valid=false;
+  #valid = false;
 
   constructor(key, elemLeiro, szuloElem) {
     this.#key = key;
@@ -23,17 +23,16 @@ class TextUrlapElem {
       let reg = this.#elemLeiro.regex;
       let regReg = new RegExp(reg);
       if (regReg.test(ertek)) {
-        this.#valid=true
+        this.#valid = true;
         this.validElem.removeClass("lathatosag");
         this.invalidElem.addClass("lathatosag");
       } else {
-        this.#valid=false
+        this.#valid = false;
         this.validElem.addClass("lathatosag");
         this.invalidElem.removeClass("lathatosag");
       }
     });
   }
-
 
   #textElem() {
     let txt = `<div class="mb-3 mt-3">

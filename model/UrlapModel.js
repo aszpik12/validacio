@@ -1,16 +1,18 @@
-import { urlapLeiro } from "./adat.js";
+import { adat, adatLeiras } from "./adatok.js";
+
 class UrlapModel {
-  #leiro;
+  #adat = [];
+  #adatLeiras = {};
+
   constructor() {
-    this.#leiro = urlapLeiro;
+    this.#adat = adat;
+    this.#adatLeiras = adatLeiras;
   }
-
-  getLeiro() {
-    return this.#leiro;
+  get adat() {
+    return this.#adat;
   }
-
-  get leiro() {
-    return this.#leiro;
+  get adatLeiras() {
+    return this.#adatLeiras;
   }
 }
 export default UrlapModel;

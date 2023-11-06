@@ -2,9 +2,9 @@ import TextUrlapElem from "./TextUrlapElem.js";
 
 class UrlapView {
   #leiro = {};
-  #valid=false;
-  #urlapElemList=[]
-  #urlapAdatok={}
+  #valid = false;
+  #urlapElemList = [];
+  #urlapAdatok = {};
   constructor(szuloElem, leiro) {
     this.#leiro = leiro;
     this.szuloElem = szuloElem;
@@ -12,21 +12,21 @@ class UrlapView {
     this.formElem = this.szuloElem.children("form");
     console.log(this.formElem);
     this.#urlapLetrehoz();
-    this.submitElem=$("#submit")
-    this.submitElem.on("click",(event)=>{
-      event.preventDefault()
+    this.submitElem = $("#submit");
+    this.submitElem.on("click", (event) => {
+      event.preventDefault();
 
-      this.#urlapElemList.forEach(elem, ()=>{
-        console.log(elem.value)
-        this.#valid=this.#valid && elem.valid
-        console.log(this.#valid)
-      })
-      if (this.#valid){
-        console.log("valid az űrlap")
-      }else{
-        console.log("nem valid az űrlap")
+      this.#urlapElemList.forEach(elem, () => {
+        console.log(elem.value);
+        this.#valid = this.#valid && elem.valid;
+        console.log(this.#valid);
+      });
+      if (this.#valid) {
+        console.log("az űrlap valid ");
+      } else {
+        console.log("az űrlap nem valid ");
       }
-    })
+    });
   }
   #urlapLetrehoz() {
     for (const key in this.#leiro) {
@@ -45,18 +45,6 @@ class UrlapView {
     console.log(txt);
   }
 
-  get valid() {
-    return this.#valid
-  }
-
-  get ertek() {
-    return this.#ertek
-  }
-
-  get key() {
-    return this.#key
-  }
-
   #numberElem(key) {
     let txt = `<div class="mb-3 mt-3">
     <label for="${key}" class="form-label">${this.#leiro[key].megj}</label>
@@ -73,30 +61,19 @@ class UrlapView {
 
     this.formElem.append(txt);
   }
+
+  get valid() {
+    return this.#valid;
+  }
+
+  get ertek() {
+    return this.#ertek;
+  }
+
+  get key() {
+    return this.#key;
+  }
+
+  
 }
 export default UrlapView;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
